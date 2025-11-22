@@ -1,0 +1,14 @@
+# When publishing to npm, the "files" field in package.json controls what gets included
+# This file is here to ensure npm doesn't use .gitignore rules
+
+# Development files to exclude from npm package
+src/
+examples/
+tsconfig.json
+.git/
+.gitignore
+*.log
+.DS_Store
+.env
+coverage/
+node_modules/
