@@ -37,6 +37,24 @@ npm install khoinguyenvk9/ts-utils#v1.0.0
 - **Time Utilities**: Date formatting, relative time, duration formatting
 - **Calculations**: Mathematical operations, statistics, conversions
 - **String Utilities**: Case conversion, truncation, slugification, and more
+- **Vietnamese Sorting**: Proper Vietnamese alphabet sorting that works on all platforms
+
+## Bundle Size
+
+The library is lightweight and tree-shakeable:
+
+| Import | Size (minified + brotli) |
+|--------|--------------------------|
+| Entire library | 3.92 KB |
+| Vietnamese sorting | 1.75 KB |
+| Email validation | 764 B |
+| Time formatting | 939 B |
+| All validations | 574 B |
+| All calculations | 681 B |
+
+**Tree-shaking support:** Modern bundlers will only include the functions you import.
+
+See [SIZE_REPORT.md](SIZE_REPORT.md) for detailed bundle size analysis.
 
 ## Usage
 
@@ -201,7 +219,14 @@ compareVietnamese('ăn', 'ân'); // negative (ă comes before â)
 ## Building
 
 ```bash
+# Build the TypeScript code
 npm run build
+
+# Check bundle sizes
+npm run size
+
+# Detailed size analysis (shows what's included)
+npm run size:why
 ```
 
 ## Publishing
