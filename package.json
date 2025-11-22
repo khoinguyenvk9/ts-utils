@@ -1,0 +1,29 @@
+{
+  "name": "ts-utils",
+  "version": "1.0.0",
+  "description": "A collection of TypeScript utility functions for form validation, time formatting, calculations, and more",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "utilities",
+    "validation",
+    "formatting",
+    "calculations"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
