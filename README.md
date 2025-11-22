@@ -16,22 +16,20 @@ You can install directly from GitHub without publishing to npm:
 
 ```bash
 # Using GitHub shorthand
-npm install username/ts-utils
+npm install khoinguyenvk9/ts-utils
 
 # Using full GitHub URL
-npm install github:username/ts-utils
+npm install github:khoinguyenvk9/ts-utils
 
 # Using git URL
-npm install git+https://github.com/username/ts-utils.git
+npm install git+https://github.com/khoinguyenvk9/ts-utils.git
 
 # Install from a specific branch
-npm install username/ts-utils#branch-name
+npm install khoinguyenvk9/ts-utils#branch-name
 
 # Install from a specific tag/release
-npm install username/ts-utils#v1.0.0
+npm install khoinguyenvk9/ts-utils#v1.0.0
 ```
-
-Replace `username` with your GitHub username.
 
 ## Features
 
@@ -181,7 +179,7 @@ npm run build
 
 2. **Create a GitHub repository** and push your code:
    ```bash
-   git remote add origin https://github.com/username/ts-utils.git
+   git remote add origin https://github.com/khoinguyenvk9/ts-utils.git
    git branch -M main
    git push -u origin main
    ```
@@ -194,7 +192,7 @@ npm run build
 
 Now others can install your library using:
 ```bash
-npm install username/ts-utils
+npm install khoinguyenvk9/ts-utils
 ```
 
 ### Publishing to npm

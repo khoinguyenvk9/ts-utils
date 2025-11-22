@@ -22,6 +22,14 @@
   ],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khoinguyenvk9/ts-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khoinguyenvk9/ts-utils/issues"
+  },
+  "homepage": "https://github.com/khoinguyenvk9/ts-utils#readme",
   "devDependencies": {
     "@types/node": "^24.10.1",
     "typescript": "^5.9.3"
