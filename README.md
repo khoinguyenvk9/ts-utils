@@ -82,6 +82,41 @@ slugify('Hello World!'); // "hello-world"
 truncate('This is a long text', 10); // "This is..."
 ```
 
+### Vietnamese Sorting
+
+Proper Vietnamese alphabet sorting that works on all platforms (including Android where `localeCompare` may not work correctly):
+
+```typescript
+import { sortVietnamese, sortVietnameseBy, compareVietnamese } from 'ts-utils';
+
+// Sort Vietnamese strings
+const words = ['đàn', 'dân', 'ăn', 'ân', 'bàn'];
+sortVietnamese(words); // ['ăn', 'ân', 'bàn', 'dân', 'đàn']
+
+// Sort Vietnamese city names
+const cities = ['Đà Nẵng', 'Hà Nội', 'Hải Phòng', 'Cần Thơ'];
+sortVietnamese(cities); // ['Cần Thơ', 'Đà Nẵng', 'Hà Nội', 'Hải Phòng']
+
+// Sort objects by Vietnamese property
+const people = [
+  { name: 'Đỗ Văn A', age: 30 },
+  { name: 'Nguyễn Văn B', age: 25 },
+  { name: 'Lê Thị C', age: 28 }
+];
+sortVietnameseBy(people, 'name');
+// Result sorted by Vietnamese name order
+
+// Custom comparison
+compareVietnamese('đàn', 'dân'); // positive (đ comes after d)
+compareVietnamese('ăn', 'ân'); // negative (ă comes before â)
+```
+
+**Features:**
+- Correct Vietnamese alphabet order: a, ă, â, b, c, d, đ, e, ê, ...
+- Proper tone mark ordering: no tone, acute (á), grave (à), hook (ả), tilde (ã), dot below (ạ)
+- Case-sensitive sorting (lowercase before uppercase for same base character)
+- Works reliably on Android and all platforms
+
 ## API Reference
 
 ### Validation Functions
@@ -159,6 +194,9 @@ truncate('This is a long text', 10); // "This is..."
 - `unescapeHtml(str: string): string`
 - `isNumeric(str: string): boolean`
 - `extractNumbers(str: string): number[]`
+- `compareVietnamese(str1: string, str2: string): number` - Compare two strings using Vietnamese alphabet order
+- `sortVietnamese(strings: string[]): string[]` - Sort an array of strings using Vietnamese alphabet order
+- `sortVietnameseBy<T>(array: T[], key: keyof T): T[]` - Sort an array of objects by a Vietnamese string property
 
 ## Building
 
@@ -170,21 +208,28 @@ npm run build
 
 ### Publishing to GitHub
 
-1. **Initialize Git repository** (if not already done):
+**Important:** The `dist/` folder (compiled JavaScript) is committed to Git to ensure GitHub installations work immediately without requiring a build step.
+
+1. **Build the project first:**
+   ```bash
+   npm run build
+   ```
+
+2. **Initialize Git repository** (if not already done):
    ```bash
    git init
    git add .
    git commit -m "Initial commit"
    ```
 
-2. **Create a GitHub repository** and push your code:
+3. **Create a GitHub repository** and push your code:
    ```bash
    git remote add origin https://github.com/khoinguyenvk9/ts-utils.git
    git branch -M main
    git push -u origin main
    ```
 
-3. **Create a release/tag** (optional but recommended):
+4. **Create a release/tag** (optional but recommended):
    ```bash
    git tag v1.0.0
    git push origin v1.0.0
@@ -194,6 +239,8 @@ Now others can install your library using:
 ```bash
 npm install khoinguyenvk9/ts-utils
 ```
+
+**Note:** Before committing changes, always run `npm run build` to ensure the `dist/` folder is up-to-date with your source code changes.
 
 ### Publishing to npm
 

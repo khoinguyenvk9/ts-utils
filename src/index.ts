@@ -76,4 +76,7 @@ export {
   unescapeHtml,
   isNumeric,
   extractNumbers,
+  compareVietnamese,
+  sortVietnamese,
+  sortVietnameseBy,
 } from './strings';
