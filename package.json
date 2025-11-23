@@ -11,6 +11,8 @@
     "build": "tsc",
     "prepare": "tsc || exit 0",
     "prepublishOnly": "npm run build",
+    "size": "npm run build && size-limit",
+    "size:why": "npm run build && size-limit --why",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -31,7 +33,9 @@
   },
   "homepage": "https://github.com/khoinguyenvk9/ts-utils#readme",
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.2.0",
     "@types/node": "^24.10.1",
+    "size-limit": "^11.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
