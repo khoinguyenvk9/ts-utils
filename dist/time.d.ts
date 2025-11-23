@@ -1,23 +1,35 @@
 /**
  * Formats a date to a readable string (e.g., "Jan 1, 2024")
+ * @param date - The date to format
+ * @param format - The format type ('short', 'medium', or 'long')
+ * @param locale - Language locale ('en' or 'vi'), defaults to 'en'
  */
-export declare function formatDate(date: Date, format?: 'short' | 'medium' | 'long'): string;
+export declare function formatDate(date: Date, format?: 'short' | 'medium' | 'long', locale?: 'en' | 'vi'): string;
 /**
  * Formats a date to a time string (e.g., "3:45 PM")
+ * @param date - The date to format
+ * @param use24Hour - Whether to use 24-hour format
+ * @param locale - Language locale ('en' or 'vi'), defaults to 'en'
  */
-export declare function formatTime(date: Date, use24Hour?: boolean): string;
+export declare function formatTime(date: Date, use24Hour?: boolean, locale?: 'en' | 'vi'): string;
 /**
  * Formats a date to a combined date and time string
+ * @param date - The date to format
+ * @param locale - Language locale ('en' or 'vi'), defaults to 'en'
  */
-export declare function formatDateTime(date: Date): string;
+export declare function formatDateTime(date: Date, locale?: 'en' | 'vi'): string;
 /**
  * Returns a relative time string (e.g., "2 hours ago", "in 3 days")
+ * @param date - The date to compare against now
+ * @param locale - Language locale ('en' or 'vi'), defaults to 'en'
  */
-export declare function getRelativeTime(date: Date): string;
+export declare function getRelativeTime(date: Date, locale?: 'en' | 'vi'): string;
 /**
  * Converts milliseconds to a human-readable duration
+ * @param milliseconds - The duration in milliseconds
+ * @param locale - Language locale ('en' or 'vi'), defaults to 'en'
  */
-export declare function formatDuration(milliseconds: number): string;
+export declare function formatDuration(milliseconds: number, locale?: 'en' | 'vi'): string;
 /**
  * Adds a specified number of days to a date
  */
